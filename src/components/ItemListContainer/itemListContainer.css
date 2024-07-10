@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 20px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 750px;
+    margin: 50px auto;
+  }
+
+  .card-title{
+    font-weight: bold;
+  }
+  
+  .btn-explore {
+    background-color: #8576ff !important;
+    border-color: #8576ff !important;
+    color: white;
+  }
+  
+  .btn-explore:hover {
+    background-color: #7bc9ff !important;
+    border-color: #7bc9ff !important;
+  }
+  

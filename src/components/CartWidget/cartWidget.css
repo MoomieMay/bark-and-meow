@@ -1,0 +1,10 @@
+.cart-widget {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem; 
+  }
+  
+  .cart-widget .cart-count {
+    margin-left: 0.5rem; 
+  }
+  
