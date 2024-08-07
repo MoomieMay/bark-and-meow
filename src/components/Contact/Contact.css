@@ -1,0 +1,28 @@
+.formTitle{
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    color: #8576ff;
+    margin-bottom: 35px;
+}
+
+.formContainer{
+    padding: 50px;
+    margin: auto;
+    width: 50%;
+}
+
+textarea{
+    height: 150px !important;
+}
+
+.btnForm {
+    background-color: #8576ff !important;
+    border-color: #8576ff !important;
+    color: white !important;
+  }
+  
+.btnForm:hover {
+    background-color: #7bc9ff !important;
+    border-color: #7bc9ff !important;
+}

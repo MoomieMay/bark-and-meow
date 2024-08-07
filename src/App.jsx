@@ -1,8 +1,12 @@
 import { useState } from 'react'
-import './App.css'
-import Navbar from "./components/Navbar/Navbar"
-import {secciones} from './mock/mockData'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Contact from './components/Contact/Contact'
+import ItemDetail from './components/Item/ItemDetail'
+import Layout from './components/pages/Layout'
+import Home from './components/Home/Home'
+import './App.css'
+import Error404 from './components/Error404/Error404'
 
 
 function App() {
@@ -12,8 +16,18 @@ function App() {
 
   return (
     <>
-      <Navbar secciones={secciones}/>
-      <ItemListContainer title={title} welcome={welcome}/>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path='/' element={ <Home title={title} welcome={welcome} /> }/>
+            <Route path='/Inicio' element={<Home title={title} welcome={welcome} />}/>
+            <Route path='/Contacto' element={<Contact />}/>
+            <Route path='/Productos/:categoryId' element={<ItemListContainer title={title}/>}/>
+            <Route path='/Detalle/:categoryId' element={<ItemDetail/>}/>
+            <Route path='*' element={<Error404/>}/>
+          </Routes>
+        </Layout>
+      </BrowserRouter>
     </>
   )
 }

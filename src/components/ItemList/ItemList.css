@@ -1,0 +1,10 @@
+.ItemListTitle{
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    color: #8576ff;
+}
+
+.itemListRow{
+    margin: 0 !important;
+}

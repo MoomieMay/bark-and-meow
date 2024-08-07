@@ -1,0 +1,48 @@
+.cardItem{
+    width: 18rem;
+    max-width: 300px;
+    margin: 50px auto;
+}
+
+.btn-explore {
+    background-color: #8576ff !important;
+    border-color: #8576ff !important;
+    color: white !important;
+    margin-left: 16px;
+  }
+  
+.btn-explore:hover {
+    background-color: #7bc9ff !important;
+    border-color: #7bc9ff !important;
+}
+
+.btn-carrito {
+    background-color: #8576ff !important;
+    border-color: #8576ff !important;
+    color: white !important;
+    margin: 5px 16px;
+  }
+  
+.btn-carrito:hover {
+    background-color: #7bc9ff !important;
+    border-color: #7bc9ff !important;
+}
+
+.cardDetail{
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.img-detail{
+    padding: 10px;
+}
+
+.details{
+    padding: 20px 25px;
+}
+
+.cant-carrito{
+    font-weight: 600;
+    text-align: center;
+
+}

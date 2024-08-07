@@ -1,13 +1,13 @@
 import React from 'react'
-import './cartWidget.css'
+import styles from './cartWidget.module.css'
 import { FaShoppingCart } from 'react-icons/fa';
 
 
 const CartWidget = () => {
   return (
-    <div className="cart-widget">
+    <div className={styles.cartWidget}>
       <FaShoppingCart />
-      <span className="cart-count">0</span>
+      <span className={styles.cartCount}>0</span>
     </div>
   )
 }

@@ -6,24 +6,15 @@
     margin: 0 20px;
   }
   
-  .card {
+  .cardContainer {
     width: 100%;
-    max-width: 750px;
-    margin: 50px auto;
+    max-width: 900px;
+    margin: 50px auto 20px;
   }
 
   .card-title{
     font-weight: bold;
   }
   
-  .btn-explore {
-    background-color: #8576ff !important;
-    border-color: #8576ff !important;
-    color: white;
-  }
-  
-  .btn-explore:hover {
-    background-color: #7bc9ff !important;
-    border-color: #7bc9ff !important;
-  }
+
   

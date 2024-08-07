@@ -1,0 +1,9 @@
+.errorCard{
+    max-width: 500px;
+    margin: 50px auto 50px;   
+    padding: 20px;
+}
+
+.card-img-top{
+    width: 25rem;
+}
