@@ -8,3 +8,7 @@
 .itemListRow{
     margin: 0 !important;
 }
+
+.itemList{
+    margin-bottom: 60px;
+}

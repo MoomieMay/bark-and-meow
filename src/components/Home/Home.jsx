@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css'
 
 const Home = ({ title, welcome }) => {
     return (
@@ -9,13 +10,13 @@ const Home = ({ title, welcome }) => {
                     <p className="card-text fs-4 mb-3">{welcome}</p>
                 </div>
             </div>
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://res.cloudinary.com/dkwlpigxv/image/upload/v1722991214/carrusel1_xaa24s.png" class="d-block w-100" alt="..."></img>
+            <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src="https://res.cloudinary.com/dkwlpigxv/image/upload/v1722991214/carrusel1_xaa24s.png" className="d-block w-100" alt="..."></img>
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://res.cloudinary.com/dkwlpigxv/image/upload/v1722991309/carrusel2_xaxtfp.png" class="d-block w-100" alt="..."></img>
+                    <div className="carousel-item">
+                        <img src="https://res.cloudinary.com/dkwlpigxv/image/upload/v1722991309/carrusel2_xaxtfp.png" className="d-block w-100" alt="..."></img>
                     </div>
                 </div>
             </div>

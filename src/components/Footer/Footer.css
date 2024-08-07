@@ -1,10 +1,12 @@
-.footer{
+.footer {
     background-color: #7bc8ff94 !important;
-    position: sticky;
-    margin-top: 25px;
+    position: relative;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
 }
 
-.footerText{
+.footerText {
     font-weight: 700;
     color: whitesmoke;
     text-shadow: 2px 1px 2px #2f4d63;
