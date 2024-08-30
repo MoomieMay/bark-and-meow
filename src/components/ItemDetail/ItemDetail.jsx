@@ -1,27 +1,13 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { FaShoppingCart } from 'react-icons/fa';
-import './Item.css'
+import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import {getProduct} from '../../utils/fetchData'
+import { useCartContext } from '../../context/CartContext'
 
-const ItemDetail = () => {
-  const [product, setProduct] = useState([]);
-  const {categoryId} = useParams();
-
-  useEffect(() => {
-    getProduct(categoryId)  
-    .then((response)=>{
-      setProduct(response)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-    .finally(()=>{
-      console.log('Success')
-    })
-  }, [categoryId]);
+const ItemDetail = ({ product }) => {
+  const { qty, setQty } = useCartContext();
+  const handleOnBuy = (cantidad) => {
+    setQty(qty + cantidad);
+  }
 
   return (
     <div className="card cardDetail mb-3">
@@ -35,8 +21,7 @@ const ItemDetail = () => {
             <p className="card-text">{product.description}</p>
             <p className="card-text"><small className="text-body-secondary">${product.price}</small></p>
           </div>
-          <ItemCount />
-          <button className='btn btn-carrito'> Agregar <FaShoppingCart /></button>
+          <ItemCount stock={product.stock} initial={1} handleOnBuy={handleOnBuy} />
         </div>
       </div>
     </div>

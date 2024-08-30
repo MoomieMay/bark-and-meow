@@ -1,7 +1,6 @@
 import React from 'react'
 import './Item.css'
-import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Item = ({ product }) => {
     return (

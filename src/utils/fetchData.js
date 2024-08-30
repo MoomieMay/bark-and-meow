@@ -6,7 +6,7 @@ export const getProduct = (id) => {
         if (products.length > 0) {
             setTimeout(() => {
                 resolve(filteredProducts);
-            }, 1000);
+            }, 1500);
         } else {
             reject("No hay productos disponibles")
         }
@@ -21,7 +21,7 @@ export const getProducts = (category) => {
         if (products.length > 0) {
             setTimeout(() => {
                 resolve(filteredProducts);
-            }, 1000);
+            }, 1500);
         } else {
             reject("No hay productos disponibles")
         }

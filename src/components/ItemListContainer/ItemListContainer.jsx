@@ -2,14 +2,16 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import './itemListContainer.css'
 import ItemList from '../ItemList/ItemList'
-import ItemDetail from '../Item/ItemDetail'
 import { getProducts } from '../../utils/fetchData'
+import { Spinner }  from "../spinner/Spinner.jsx"
 
 const ItemListContainer = ({ title, welcome }) => {
   const [products, setProducts] = useState([]);
   const {categoryId} = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     getProducts(categoryId)  
     .then((response)=>{
       setProducts(response)
@@ -18,6 +20,7 @@ const ItemListContainer = ({ title, welcome }) => {
       console.log(error)
     })
     .finally(()=>{
+      setLoading(false);
       console.log('Success')
     })
   }, [categoryId]);
@@ -30,7 +33,8 @@ const ItemListContainer = ({ title, welcome }) => {
           <p className="card-text fs-4 mb-3">{welcome}</p>
         </div>
       </div>
-      <ItemList products = {products} listTitle={categoryId}/>
+      {loading ? <Spinner />
+    :<ItemList products = {products} listTitle={categoryId}/>}
 
     </>
   )
