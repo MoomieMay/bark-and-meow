@@ -1,5 +1,5 @@
 
-![Logo](https://res.cloudinary.com/dkwlpigxv/image/upload/v1725066354/logoB_M_cciv9j.png)
+![Logo](https://res.cloudinary.com/dkwlpigxv/image/upload/v1725067072/Logo_fil3sj.png)
 
 
 # 🐾 Bark&Meow - Petshop
