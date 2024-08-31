@@ -4,7 +4,9 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const ItemCount = ({ stock, initial, handleOnBuy }) => {
+    const navigate = useNavigate();
     const [cant, setCant] = useState(initial);
+    const [itemAdded, setItemAdded] = useState(false);
 
     const handleClic = (op) => {
         op === "+" ? ClicMas() : ClicMenos();
@@ -26,17 +28,31 @@ const ItemCount = ({ stock, initial, handleOnBuy }) => {
         setCant(cant + 1);
     }
 
-    const handleAddToCart =() =>{
+    const handleAddToCart = () => {
         handleOnBuy(cant);
+        setItemAdded(true);
     }
+
+    const handleGoToCheckout = () => {
+        navigate("/Carrito");
+        setItemAdded(false);
+
+    }
+
     return (
         <>
-            <div>
-                <button className="btn btn-carrito" onClick={() => handleClic("-")}>-</button>
-                <span className='cant-carrito'>{cant}</span>
-                <button className="btn btn-carrito" onClick={() => handleClic("+")}>+</button>
-            </div>
-            <button className='btn btn-carrito' onClick={handleAddToCart}> Agregar <FaShoppingCart /></button>
+            {itemAdded ? (
+                <button className='btn btn-carrito' onClick={handleGoToCheckout}> Ver Carrito <FaShoppingCart /></button>
+            ) : (
+                <>
+                    <div>
+                        <button className="btn btn-carrito" onClick={() => handleClic("-")}>-</button>
+                        <span className='cant-carrito'>{cant}</span>
+                        <button className="btn btn-carrito" onClick={() => handleClic("+")}>+</button>
+                    </div>
+                    <button className='btn btn-carrito' onClick={handleAddToCart}> Agregar <FaShoppingCart /></button >
+                </>
+            )}
         </>
     )
 }

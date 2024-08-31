@@ -9,3 +9,11 @@
     margin-left: 0.5rem; 
   }
   
+  .cartWidget a {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del icono */
+  }
+  
+  .cartCount {
+    margin-left: 5px;
+  }

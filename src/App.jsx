@@ -5,9 +5,11 @@ import Contact from './components/Contact/Contact'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Layout from './components/pages/Layout'
 import Home from './components/Home/Home'
+import Checkout from './components/Checkout/Checkout'
 import './App.css'
 import Error404 from './components/Error404/Error404'
 import CartContextProvider from './context/CartContext'
+import Cart from './components/Cart/Cart'
 
 function App() {
   const title = "Pet Shop Bark&Meow"
@@ -25,6 +27,8 @@ function App() {
               <Route path='/Contacto' element={<Contact />} />
               <Route path='/Productos/:categoryId' element={<ItemListContainer title={title} />} />
               <Route path='/Detalle/:categoryId' element={<ItemDetailContainer />} />
+              <Route path='/Carrito' element={<Cart />} />
+              <Route path='/Checkout' element={<Checkout />} />
               <Route path='*' element={<Error404 />} />
             </Routes>
           </Layout>

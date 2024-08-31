@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import { db } from '../../firebase/dbConnection.js'
+import { collection, getDocs, query, where } from "firebase/firestore"
 import './itemListContainer.css'
 import ItemList from '../ItemList/ItemList'
-import { getProducts } from '../../utils/fetchData'
 import { Spinner }  from "../spinner/Spinner.jsx"
 
 const ItemListContainer = ({ title, welcome }) => {
@@ -12,17 +13,22 @@ const ItemListContainer = ({ title, welcome }) => {
 
   useEffect(() => {
     setLoading(true);
-    getProducts(categoryId)  
-    .then((response)=>{
-      setProducts(response)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-    .finally(()=>{
-      setLoading(false);
-      console.log('Success')
-    })
+    let productsCollection = collection(db, "productos")
+
+    if(categoryId){
+      productsCollection = query(productsCollection, where("category", "==", categoryId))
+    }
+      getDocs(productsCollection).then(({docs}) => {
+        const prodFromDocs = docs.map((doc)=>({
+          id: doc.id,
+          ...doc.data()
+        }))
+        setProducts(prodFromDocs)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error: ", error)
+      }) 
   }, [categoryId]);
 
   return (

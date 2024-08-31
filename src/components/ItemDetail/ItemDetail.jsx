@@ -4,9 +4,9 @@ import ItemCount from '../ItemCount/ItemCount'
 import { useCartContext } from '../../context/CartContext'
 
 const ItemDetail = ({ product }) => {
-  const { qty, setQty } = useCartContext();
-  const handleOnBuy = (cantidad) => {
-    setQty(qty + cantidad);
+  const { addToCart } = useCartContext();
+  const handleOnBuy = (cant) => {
+    addToCart(product, cant);
   }
 
   return (

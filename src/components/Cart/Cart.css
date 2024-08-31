@@ -1,0 +1,30 @@
+.cartCard{
+    margin: 50px 100px;
+}
+
+.cartTitle{
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    color: #8576ff;
+    margin-top: 50px;
+}
+
+.btn-cart {
+    background-color: #8576ff !important;
+    border-color: #8576ff !important;
+    color: white !important;
+    margin-left: 16px;
+  }
+  
+.btn-cart:hover {
+    background-color: #7bc9ff !important;
+    border-color: #7bc9ff !important;
+}
+
+.btns{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
